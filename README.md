@@ -1,12 +1,15 @@
 # ①課題番号-プロダクト名
-
+Kadai_08_db育児日記アプリ登録画面
 
 ## ②課題内容（どんな作品か）
--
+-育児日記アプリ登録画面
 
 ## ③DEMO
 （任意）デプロイしている場合はURLを記入
 
+データ登録　http://localhost/php/kadai_08_db/index.php
+データ表示　http://localhost/php/kadai_08_db/select.php
+利用者比率グラフ　http://localhost/php/kadai_08_db/count.php
 ## ④工夫した点・こだわった点
 -
 -
