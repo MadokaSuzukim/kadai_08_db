@@ -17,7 +17,6 @@ $stmt->execute();
 $child = $stmt->fetch(PDO::FETCH_ASSOC);
 $nickname = $child['nickname'];
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,18 +35,12 @@ $nickname = $child['nickname'];
   <div class="container">
     <h2><?= htmlspecialchars($nickname, ENT_QUOTES) ?>ちゃん、今日はどんな様子だった？</h2>
     <form method="POST" action="funcs.php" enctype="multipart/form-data">
-    <label>日付：<input type="date" name="entry_date"></label><br>
-    <label>時間：<input type="time" name="entry_time"></label><br>
-    <label>今日の様子：<textarea name="content" rows="4" cols="40"></textarea></label><br>
-    <label>写真：<input type="file" name="photo"></label><br>
-    <!-- <input type="submit" value="送信"> -->
-</form>
-    <!-- <form method="POST" action="insert.php"> -->
-    <input type="hidden" name="child_id" value="1">
-      <!-- 日記の入力フォーム要素 -->
-      <div>
-        <input type="submit" value="送信">
-      </div>
+      <input type="hidden" name="child_id" value="<?= htmlspecialchars($id, ENT_QUOTES) ?>">
+      <label>日付：<input type="date" name="entry_date" required></label><br>
+      <label>時間：<input type="time" name="entry_time" required></label><br>
+      <label>今日の様子：<textarea name="content" rows="4" cols="40" required></textarea></label><br>
+      <label>写真：<input type="file" name="photo"></label><br>
+      <input type="submit" value="送信">
     </form>
   </div>
 </main>

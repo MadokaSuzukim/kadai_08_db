@@ -21,7 +21,7 @@ if ($status == false) {
     // 成功の場合は結果を取得
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $count = $result['count']; // 登録者数
-    echo "登録者数: " . $count;
+    // echo "登録者数: " . $count;
 }
 
 // 性別に応じた登録者数を取得
@@ -65,11 +65,38 @@ $ageGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>利用者比率グラフ</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+.counter {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.counter h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.counter p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #666;
+}
+</style>
+
+    <div class="counter">
+    <h3>登録者数</h3>
+    <p><?php echo $count; ?></p>
+</div>
 </head>
 <body>
 
 <div>
-    <canvas id="genderChart"></canvas>
+<canvas id="genderChart"></canvas>
 </div>
 
 <script>
@@ -88,29 +115,36 @@ var genderChart = new Chart(ctx, {
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)'
             ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
+        //     borderColor: [
+        //         'rgba(255,99,132,1)',
+        //         'rgba(54, 162, 235, 1)',
+        //         'rgba(255, 206, 86, 1)'
+        //     ],
+        //     borderWidth: 1
         }]
     },
     options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: '性別比率'
-            }
+        maintainAspectRatio: false, // グラフのコンテナのサイズに合わせて、高さと幅の比率を保持しない
+    aspectRatio: 1, // アスペクト比（幅/高さ）を指定
+    responsive: true, // レスポンシブ対応を有効にする
+    scales: {
+        // y: {
+        //     beginAtZero: true // Y軸のスケールが0から始まるように設定
+        // }
+    },
+    plugins: {
+        legend: {
+            position: 'top', // 凡例を上部に配置
+        },
+        title: {
+            display: true,
+            text: '性別比率' // グラフのタイトルを設定
         }
+    }
     },
 });
 </script>
-<canvas id="ageGroupChart"></canvas>
+<canvas id="ageGroupChart" width="300" height="100"></canvas>
 <script>
 var ctx = document.getElementById('ageGroupChart').getContext('2d');
 var chart = new Chart(ctx, {
