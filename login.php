@@ -19,7 +19,7 @@ session_start(); // セッションの開始
 
 // データベース接続
 try {
-    $pdo = new PDO('mysql:dbname=gs_daily_db;charset=utf8;host=localhost', 'root', '');
+    $pdo = new PDO('mysql:dbname=marumark_gs_kadai;charset=utf8;host=mysql646.db.sakura.ne.jp', 'root', '');
 } catch (PDOException $e) {
     exit('DB_CONNECT:' . $e->getMessage());
 }
