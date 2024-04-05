@@ -67,6 +67,6 @@
 
 <!-- Main[End] -->
 
-
+<div class="navbar-header"><a class="navbar-brand" href="count.php">登録データ一覧参照</a></div>
 </body>
 </html>
