@@ -1,4 +1,18 @@
 {
     "php.validate.executablePath": ""
-    
+
 }
+{
+    // Mainly for static files
+    "liveServer.settings.useWebExt": true,
+
+    // This means that you change your real URL (current PHP url)
+    // to another URL (which Live Sever starts).
+    "liveServer.settings.proxy": {
+        "enable": true,
+        "baseUri": "/",
+        "proxyUri": "http://localhost:<port ID>/<File Path>"
+    },
+    "php.validate.executablePath": "<php file path in bin in xampp>"
+}
+

@@ -16,7 +16,6 @@ try {
   exit('DB_CONNECT:'.$e->getMessage());
 }
 
-
 //３．データ登録SQL作成
 $sql = "INSERT INTO children (name,nickname, birthdate,gender, likes,indate) VALUES (:name,:nickname, :birthdate,:gender, :likes,sysdate())";
 $stmt = $pdo->prepare($sql);
