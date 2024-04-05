@@ -6,11 +6,11 @@ Kadai_08_db育児日記アプリ登録画面
 
 ## ③DEMO
 （任意）デプロイしている場合はURLを記入
-https://marumark.sakura.ne.jp/kadai_08_db/index.php
+https://marupass.net/kadai_08_db/index.php
 
-データ登録　http://localhost/php/kadai_08_db/index.php
-データ表示　http://localhost/php/kadai_08_db/select.php
-利用者比率グラフ　http://localhost/php/kadai_08_db/count.php
+データ登録　/index.php
+データ表示　/select.php
+利用者比率グラフ　/count.php
 ## ④工夫した点・こだわった点
 -登録した人の分布をグラフで見ることができる。
 -
