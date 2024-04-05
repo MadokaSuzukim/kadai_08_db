@@ -15,6 +15,8 @@
     float: none;
   }
 </style>
+<nav class="navbar navbar-default">
+  
 </head>
 <body>
 
