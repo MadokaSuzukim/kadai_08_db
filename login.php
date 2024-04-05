@@ -38,7 +38,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user) {
     // ユーザーに紐づく子どものIDを取得（例としてusersテーブルにchild_idがあると仮定）
     $_SESSION['child_id'] = $user['id']; // 子どものIDをセッションに保存
-    header("Location: diary_create.php"); // 日記作成ページへリダイレクト
+    header("Location: dialy.php"); // 日記作成ページへリダイレクト
 } else {
     echo "ログインに失敗しました。";
 }
