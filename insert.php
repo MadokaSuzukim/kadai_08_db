@@ -11,7 +11,7 @@ $likes = $_POST["likes"];
 //2. DB接続します
 try {
   //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=marumark_gs_kadai;charset=utf8;host=mysql646.db.sakura.ne.jp','root','');
+  $pdo = new PDO('mysql:dbname=marumark_gs_kadai;charset=utf8;host=mysql57.db.sakura.ne.jp','root','');
 } catch (PDOException $e) {
   exit('DB_CONNECT:'.$e->getMessage());
 }
